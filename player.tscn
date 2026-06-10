@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://1xleujyp5l6m"]
 
 [ext_resource type="Texture2D" uid="uid://cmpbvg3ug5872" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige.png" id="1_hqtel"]
+[ext_resource type="Script" uid="uid://cbb1ecobnpvpg" path="res://player.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://n8w6fc1nqp0t" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige_jump.png" id="2_sweqy"]
 [ext_resource type="Texture2D" uid="uid://eme6oovuauck" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige_walk1.png" id="3_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bru1t2ixtjeom" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige_walk2.png" id="4_1jxqw"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dw050"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -35,14 +36,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Node2D" unique_id=1960170417]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
+size = Vector2(97, 136)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=565714081]
+[node name="Player" type="CharacterBody2D" unique_id=1657883024]
+script = ExtResource("1_sweqy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1776334097]
 position = Vector2(-5.0000305, -13)
 scale = Vector2(1.4493991, 1.4459034)
-sprite_frames = SubResource("SpriteFrames_dw050")
-animation = &"jump"
-frame_progress = 0.6553268
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1440707673]
 position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=928268762]
+position = Vector2(-5.0000305, -13)
+scale = Vector2(1.4493991, 1.4459034)
+sprite_frames = SubResource("SpriteFrames_hqtel")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=165304637]
+position = Vector2(-4.5, -14)
+shape = SubResource("RectangleShape2D_sweqy")

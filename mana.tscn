@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://di2gcdvdkplcn"]
+
+[ext_resource type="Texture2D" uid="uid://dool3qwthayxy" path="res://assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item001.png" id="1_8sdbo"]
+[ext_resource type="Script" uid="uid://b03c5lrnv624a" path="res://mana.gd" id="1_f5jpc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5jpc"]
+radius = 15.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_77x45"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 4.0
+color = Color(0.17254902, 1, 1, 1)
+
+[node name="mana" type="Area2D" unique_id=565043903]
+script = ExtResource("1_f5jpc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=14954925]
+texture = ExtResource("1_8sdbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=571583351]
+shape = SubResource("CapsuleShape2D_f5jpc")
+
+[node name="Particles" type="GPUParticles2D" parent="." unique_id=1950912532]
+emitting = false
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_77x45")
