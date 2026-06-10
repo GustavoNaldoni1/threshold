@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://1xleujyp5l6m"]
+
+[ext_resource type="Texture2D" uid="uid://cmpbvg3ug5872" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige.png" id="1_hqtel"]
+[ext_resource type="Texture2D" uid="uid://n8w6fc1nqp0t" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige_jump.png" id="2_sweqy"]
+[ext_resource type="Texture2D" uid="uid://eme6oovuauck" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige_walk1.png" id="3_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bru1t2ixtjeom" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige_walk2.png" id="4_1jxqw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dw050"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hqtel")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sweqy")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2hs0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1jxqw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D" unique_id=1960170417]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=565714081]
+position = Vector2(-5.0000305, -13)
+scale = Vector2(1.4493991, 1.4459034)
+sprite_frames = SubResource("SpriteFrames_dw050")
+animation = &"jump"
+frame_progress = 0.6553268
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1440707673]
+position_smoothing_enabled = true
