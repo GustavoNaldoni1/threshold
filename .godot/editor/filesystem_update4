@@ -1,7 +1,5 @@
-res://player.tscn
-res://main.tscn
-res://player.gd
-res://killzone.gd
 res://killzone.tscn
 res://mana.tscn
-res://mana.gd
+res://player.tscn
+res://main.tscn
+res://scenes/main.tscn

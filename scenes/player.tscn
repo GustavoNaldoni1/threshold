@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://1xleujyp5l6m"]
 
 [ext_resource type="Texture2D" uid="uid://cmpbvg3ug5872" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige.png" id="1_hqtel"]
-[ext_resource type="Script" uid="uid://cbb1ecobnpvpg" path="res://player.gd" id="1_sweqy"]
+[ext_resource type="Script" uid="uid://cbb1ecobnpvpg" path="res://scripts/player.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://n8w6fc1nqp0t" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige_jump.png" id="2_sweqy"]
 [ext_resource type="Texture2D" uid="uid://eme6oovuauck" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige_walk1.png" id="3_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bru1t2ixtjeom" path="res://assets/kenney_platformer-art-extended-enemies/Alien sprites/alienBeige_walk2.png" id="4_1jxqw"]

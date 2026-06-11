@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://di2gcdvdkplcn"]
 
 [ext_resource type="Texture2D" uid="uid://dool3qwthayxy" path="res://assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item001.png" id="1_8sdbo"]
-[ext_resource type="Script" uid="uid://b03c5lrnv624a" path="res://mana.gd" id="1_f5jpc"]
+[ext_resource type="Script" uid="uid://b03c5lrnv624a" path="res://scripts/mana.gd" id="1_f5jpc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5jpc"]
 radius = 15.0
