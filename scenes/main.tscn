@@ -4882,7 +4882,7 @@ tile_map_data = PackedByteArray("AAACACYAAAADAAIAAAACACIAAAADAAEAAAACAB4AAAADAAE
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="Player" parent="." unique_id=1960170417 instance=ExtResource("2_tbgi4")]
-position = Vector2(10083, -1001)
+position = Vector2(635, 364)
 
 [node name="killzone" parent="." unique_id=1359821979 instance=ExtResource("3_tefeu")]
 position = Vector2(2214, 1213)
