@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 res://scenes/powerup_speed.tscn
 res://scripts/player.gd
 res://scripts/powerup_speed.gd
+=======
+>>>>>>> 0ae905eb244c515c416fc225a47d0f2887eacb8a
 res://scenes/main.tscn
 res://scenes/player.tscn
 res://scenes/hud.tscn
