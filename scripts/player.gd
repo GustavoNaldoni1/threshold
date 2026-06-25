@@ -1,11 +1,19 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
+var SPEED = 300.0
 const JUMP_VELOCITY = -700.0
 
 @onready var player: CharacterBody2D = $"."
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hud: CanvasLayer = $"../HUD"
+@onready var posicao_inicial: Marker2D = $"../PosicaoInicial"
+
+# velocidade durante o power-up
+const SPEED_BOOST=400.0
+# segundos de duração
+const BOOST_DURATION=5.0
+# variável que controla quando o power-up está ativado ou não
+var boosted=false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -41,8 +49,45 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func die():
-# get_tree() — acessa o SceneTree, que é o gerenciador geral do jogo.
-# É por ele que você controla cenas, pausa o jogo, fecha o jogo, etc.
-# .reload_current_scene() — reinicia a cena atual do zero, como se
-# você tivesse fechado e reaberto ela.
-	get_tree().reload_current_scene()
+	tomar_dano(1)
+	
+func tomar_dano(dano:int)->void:
+	GameManager.vidas -= dano
+	if GameManager.vidas <= 0:
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	else:
+		respawn();
+	hud.atualizar_vidas()
+	
+func respawn() -> void:
+	position = posicao_inicial.position
+	
+# função que aplica o aumento de velocidade
+func apply_speed_boost():
+	
+	print("Boost aplicado! Velocidade = ", SPEED)
+	# Se a variável boosted for true
+	if boosted: 
+		return
+	# Sai da função sem fazer nada
+	# evita empilhar o efeito, ou seja, ter vários boosts de uma vez
+	# Senão, se a variável boosted for false, segue e muda para true
+	boosted=true
+	# Altere a velocidade para o valor da varíavel SPEED_BOOST
+	SPEED=SPEED_BOOST
+	# Cria um timer com a duração da variável BOOST_DURATION e pausa a função
+	# até que esse tempo termine
+	await get_tree().create_timer(BOOST_DURATION).timeout
+	# retorna a variável velocidade ao valor original
+	SPEED=200.0
+	# volta a variável boosted para false, sinalizando que o power-up acabou
+	boosted=false
+
+
+	
+ 
+
+
+func _on_powerup_speed_speed_collected(body: Variant) -> void:
+	if body.has_method("apply_speed_boost"):
+		body.apply_speed_boost()

@@ -1,0 +1,11 @@
+res://scenes/enemy.tscn::5c26bda09fab052204faa045ffbab493::1782360288::res://.godot/exported/133200997/export-a930820ec0ab16db6719aff4daa500f9-enemy.scn
+res://scenes/enemyzone.tscn::aaf472d090eae60a09ad7173b42bb087::1782360273::res://.godot/exported/133200997/export-ce291741d42b760cfcf1a42bef832900-enemyzone.scn
+res://scenes/killzone.tscn::6b575ae783362dab7e91e30bea35d0ec::1782360233::res://.godot/exported/133200997/export-494bf1445653c44a49a39c8f8b1ce8d0-killzone.scn
+res://scenes/main.tscn::e6ccaaf8c173f8edb827cf1ad2552324::1782364969::res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+res://scenes/mana.tscn::dc51f1a02bd7a4e4a83099bdb87ef275::1781140586::res://.godot/exported/133200997/export-d733e016bfce58225b7ca3a74b0d9923-mana.scn
+res://scenes/player.tscn::5a418a7b9bb263dd0417a34646429530::1782363672::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
+res://scenes/powerup_speed.tscn::43a9e2405bb9a42a8e65d9efabd6850b::1782362483::res://.godot/exported/133200997/export-164078e87d6ab3e0a06613f43ac3b80e-powerup_speed.scn
+res://scenes/hud.tscn::339775b36daa18a6f56f4b96e1922163::1782363504::res://.godot/exported/133200997/export-38bf74ff262409a94a41206b2b776d33-hud.scn
+res://scenes/menu_inicial.tscn::a3c7b5dc4efd0f71d0e11034f7136ab7::1782364191::res://.godot/exported/133200997/export-692e473bf015ff70413fffa63789b5d8-menu_inicial.scn
+res://scenes/game_over.tscn::4b7c92509c8e34c0f5f46d949494ceb8::1782364445::res://.godot/exported/133200997/export-21b8bee24a2bf9e9929bc898cc82b612-game_over.scn
+res://scenes/pause_menu.tscn::f6e3e7049f736bb794e299927b270043::1782365070::res://.godot/exported/133200997/export-ca2c2284eb591e72162d67219a0d2f87-pause_menu.scn

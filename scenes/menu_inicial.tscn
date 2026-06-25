@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b5lt8q72u6p0m"]
+
+[ext_resource type="Texture2D" uid="uid://crajovm3yk176" path="res://assets/kenney_platformer-art-extended-enemies/sample.png" id="1_40mju"]
+[ext_resource type="Script" uid="uid://bfliddgom6s1w" path="res://scripts/menu_inicial.gd" id="1_eg8ak"]
+[ext_resource type="Texture2D" uid="uid://bpnu2wvhcaco3" path="res://assets/kenney_platformer-art-requests/Tiles/metal.png" id="3_nn1uv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lqws"]
+font_size = 100
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_twj80"]
+texture = ExtResource("3_nn1uv")
+
+[node name="menuInicial" type="Control" unique_id=1685960773]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eg8ak")
+
+[node name="GameBackground" type="TextureRect" parent="." unique_id=491000887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_40mju")
+
+[node name="TituloJogoLabel" type="Label" parent="." unique_id=30424798]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 58.0
+offset_right = 810.0
+offset_bottom = 195.0
+text = "Threshold"
+label_settings = SubResource("LabelSettings_1lqws")
+
+[node name="Button" type="Button" parent="." unique_id=1655003373]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 206.0
+offset_right = 717.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_twj80")
+text = "Jogar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

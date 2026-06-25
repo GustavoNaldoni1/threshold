@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cpdcxly0ebapd"]
+
+[ext_resource type="Script" uid="uid://giupl7wuu4g7" path="res://scripts/enemy.gd" id="1_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://q5kpwaaq363l" path="res://assets/kenney_platformer-art-extended-enemies/Enemy sprites/ghost.png" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://b1d28o7gfd147" path="res://assets/kenney_platformer-art-extended-enemies/Enemy sprites/ghost_normal.png" id="2_4ra3w"]
+[ext_resource type="PackedScene" uid="uid://bkcuk4u4bxq58" path="res://scenes/enemyzone.tscn" id="4_5uy6h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5uy6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_md0e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4ra3w")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4w8v"]
+radius = 28.0
+height = 84.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xwavj"]
+radius = 32.0
+height = 94.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=589074607]
+script = ExtResource("1_4ra3w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1089470602]
+sprite_frames = SubResource("SpriteFrames_5uy6h")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.7327062
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=364004653]
+shape = SubResource("CapsuleShape2D_c4w8v")
+
+[node name="FloorLeft" type="RayCast2D" parent="." unique_id=2064566932]
+target_position = Vector2(-35, 44)
+
+[node name="FloorRight" type="RayCast2D" parent="." unique_id=1480692150]
+target_position = Vector2(34, 44)
+
+[node name="killzone" parent="." unique_id=1359821979 instance=ExtResource("4_5uy6h")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1898426000]
+shape = SubResource("CapsuleShape2D_xwavj")

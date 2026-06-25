@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dbv0iwnkjvnq5"]
+
+[ext_resource type="Script" uid="uid://bhbbfxxjy73yr" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n87rw"]
+font_size = 70
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1186827074]
+process_mode = 3
+script = ExtResource("1_n87rw")
+
+[node name="Control" type="Control" parent="." unique_id=1374820927]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseBackground" type="ColorRect" parent="Control" unique_id=1443089799]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23921569, 0.23921569, 0.23921569, 0.2901961)
+
+[node name="PausadoLabel" type="Label" parent="Control" unique_id=888548212]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 129.0
+offset_right = 766.0
+offset_bottom = 225.0
+text = "PAUSADO"
+label_settings = SubResource("LabelSettings_n87rw")
+
+[node name="ContinuarButton" type="Button" parent="Control" unique_id=665663247]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 250.0
+offset_right = 715.0
+offset_bottom = 313.0
+theme_override_font_sizes/font_size = 40
+text = "CONTINUAR"
+
+[node name="MenuPrincipalButton" type="Button" parent="Control" unique_id=1692237227]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 347.0
+offset_right = 654.0
+offset_bottom = 410.0
+theme_override_font_sizes/font_size = 40
+text = "HOME"
+
+[connection signal="pressed" from="Control/ContinuarButton" to="." method="_on_continuar_button_pressed"]
+[connection signal="pressed" from="Control/MenuPrincipalButton" to="." method="_on_menu_principal_button_pressed"]
